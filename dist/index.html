@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <h1 class="title">Stuff to do</h1>
+    <div class="projects">
+        <h2 class="overview-list-title">Overview</h2>
+        <ul class="overview">
+            <li class="overview-item">All tasks</li>
+            <li class="overview-item">Today</li>
+            <li class="overview-item">This week</li>
+        </ul>
+        <h2 class="projects-title">My projects</h2>
+        <ul class="project"></ul>
+        <form action="" class="new-project-form">
+            <input type="text" class="new-project" placeholder="Add new list"/>
+            <button class="add-project-btn">+</button>
+        </form>
+    </div>
+    <div class="todo-list">
+        <div class="todo-list-header">
+            <h2 class="list-title"></h2>
+            <p class="task-count"></p>
+        </div>
+        <div class="todo-list-body">
+            <div class="tasks">
+            </div>
+            <div class="new-tasks">
+                <form action="" class="new-task-form">
+                    <input type="text" class="new-task" placeholder="Add new task"/>
+                    <button class="add-task-btn">+</button>
+                    <input type="date" class="due-date"/>
+                </form>
+            </div>
+            <div class="task-removal">
+                <button class="clear-completed-tasks-btn">Clear completed tasks</button>
+                <button class="delete-project-btn">Delete project</button>
+            </div>
+        </div>
+    </div>
+    <div class="overview-list">
+        <div class="overview-list-header">
+            <h2 class="overview-title"></h2>
+            <p class="overview-task-count"></p>
+        </div>
+        <div class="overview-list-body">
+            <div class="overview-tasks">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <template class="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label>
+                <span class="custom-checkbox"></span>
+                <p class="display-due-date"></p>
+            </label>
+        </div>
+    </template>
+
+    <template class="overview-task-template">
+        <div class="overview-task">
+            <label>
+                <p class="display-due-date"></p>
+            </label>
+
+        </div>
+    </template>
+</body>
+</html>

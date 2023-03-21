@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+body {
+    font-family: 'Kalam', cursive;
+    margin: 0;
+    font-size: 1.5rem;
+    background-image: url("./images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: 1fr minmax(100px, auto) minmax(250px, 500px) 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+.title {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    font-size: calc(7vw + 2rem);
+    justify-self: center;
+    margin: -0.2rem 0 -0.2rem;
+    color: #ede1cf;
+}
+
+.project,
+.overview {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 1.5rem;
+}
+
+.overview-list-title,
+.projects-title {
+    color: #7c746c;
+}
+
+.project-name,
+.overview-item {
+    cursor: pointer;
+    color: #7c746c;
+}
+
+.project-name:hover,
+.overview-item:hover {
+    opacity: 0.7;
+}
+
+form {
+    display: flex;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.add-project-btn,
+.add-task-btn {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right:0.25rem;
+    transition: opacity 150ms ease-in;
+    color: #7c746c;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+.new-project,
+.new-task {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #7c746c;
+    font-size: 1.2rem;
+    transition: border-bottom 150ms ease-in;
+    outline: none;
+    order: 2;
+    padding: 0.25rem;
+    font-family: 'Kalam', cursive;
+    color: #7c746c;
+
+}
+
+.due-date {
+    order: 3;
+    margin-left: auto;
+    border: 2px solid #7c746c;
+    border-radius: 5px;
+    font-family: 'Kalam', cursive;
+    color: #7c746c;
+}
+
+.new-task-form {
+    display: flex;
+}
+
+.new-project:focus,
+.new-task:focus {
+    border-bottom-width: 3px;
+}
+
+.new-project:focus::placeholder,
+.new-task:focus::placeholder {
+    opacity: 0.2;
+}
+
+.active-project,
+.active-overview-item {
+    font-weight: bold;
+}
+
+
+.projects {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgb(255, 255, 255, 0.8);
+    padding-bottom: 29.88px;
+    padding-left: 29.88px;
+    padding-right: 29.88px;
+    border-radius: 15px;
+}
+
+.todo-list,
+.overview-list {
+    --spacer: 2rem;
+
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.todo-list-header,
+.overview-list-header {
+    padding: var(--spacer);
+    background: #ede1cf;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px 15px 0 0;
+    color: #7c746c;
+}
+
+.list-title,
+.overview-title {
+    margin: 0;
+    margin-right: 1em;
+}
+
+.task-count,
+.overview-task-count {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.todo-list-body,
+.overview-list-body {
+    padding: var(--spacer);
+    position: relative;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.task label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.overview-task label {
+    display: flex;
+    align-items: center;
+}
+
+.task > label > p,
+.overview-task > label > p {
+    order: 3;
+    margin-left: auto;
+}
+
+.task,
+.overview-task {
+    position: relative;
+    margin-bottom: 1.25rem;
+    color: #385c4d
+}
+
+.task::after,
+.overview-task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5rem;
+    height: 2px;
+    background: black;
+    opacity: 0.1;
+}
+
+.custom-checkbox {
+    --size: 0.75rem;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
+    cursor: pointer;
+    border: 2px solid #385c4d;;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 150ms ease;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+    transform: scale(1.2);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+    background: #385c4d;
+    box-shadow: inset 0 0 0px 2px white;
+}
+
+[type="checkbox"]:checked + label {
+    opacity: 0.5;  
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 1.5rem;
+    height: 3px;
+    background: #385c4d;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease;
+}
+
+[type="checkbox"]:checked + label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.task-removal {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+}
+
+.task-removal > button {
+    opacity: 1;
+    font-size: 1rem;
+    transition: color 150ms;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 15px 0 15px;
+    font-family: 'Kalam', cursive;
+    color: #7c746c;
+}
+
+.task-removal > button:hover {
+    color: red;
+}
+
+.display-due-date {
+    margin: 0;
+}
+
+.is-past {
+    background-color: lightpink;
+}
+
+.is-today {
+    background-color: lightgoldenrodyellow;
+}

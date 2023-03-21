@@ -1,0 +1,24 @@
+const projectContainer = document.querySelector(".project");
+const overviewContainer = document.querySelector(".overview");
+const overviewItem = document.querySelectorAll(".overview-item");
+const newProjectForm = document.querySelector(".new-project-form");
+const newProjectName = document.querySelector(".new-project");
+const deleteProjectBtn = document.querySelector(".delete-project-btn");
+const projectDisplayContainer = document.querySelector(".todo-list");
+const projectTitle = document.querySelector(".list-title");
+const taskCount = document.querySelector(".task-count");
+const overviewTaskCount = document.querySelector(".overview-task-count");
+const taskContainer = document.querySelector(".tasks");
+const taskTemplate = document.querySelector(".task-template");
+const newTaskForm = document.querySelector(".new-task-form");
+const newTaskName = document.querySelector(".new-task");
+const taskDueDate = document.querySelector(".due-date");
+const clearCompletedTasksBtn = document.querySelector(".clear-completed-tasks-btn");
+const overviewTaskTemplate = document.querySelector(".overview-task-template");
+const overviewDisplayContainer = document.querySelector(".overview-list");
+const newTaskContainer = document.querySelector(".new-tasks");
+const taskRemovalContainer = document.querySelector(".task-removal");
+const overviewTaskContainer = document.querySelector(".overview-tasks");
+const overviewTitle = document.querySelector(".overview-title");
+
+export {projectContainer, overviewContainer, overviewItem, newProjectForm, newProjectName, deleteProjectBtn, projectDisplayContainer, projectTitle, taskCount, overviewTaskCount, taskContainer, taskTemplate, newTaskForm, newTaskName, taskDueDate, clearCompletedTasksBtn, overviewTaskTemplate, overviewDisplayContainer, newTaskContainer, taskRemovalContainer, overviewTaskContainer, overviewTitle};
